@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>E parking systems</title>           
+=======
+        <link rel="stylesheet" href="styles.css"></link>
+        <title>Eparking</title>            
+        
+    </h:head>
+    
+    <h:body>
+        
+		<div class="header">
+			<div class="container">
+				<h1 class="header-heading">E Parking</h1>
+			</div>
+		</div>
+		<div class="nav-bar">
+			<div class="container">
+				<ul class="nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Register Car</a></li>
+					<li><a href="#">Book Parking</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="main">
+                                     <center><h1>REGISTER CAR</h1></center>
+        <h:form>
+              <h:outputLabel>regNo</h:outputLabel>
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+         
+        <h:inputText id="regno" 
+                     value="#{RegCarObj.regNo}"
+                     validatorMessage="enter reg no">
+                     
+                     <f:validateRequired/>
+        
+        </h:inputText>
+        <br></br>
+        <h:outputLabel>CarName</h:outputLabel>
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+         
+        <h:inputText id="carname" 
+                     value="#{RegCarObj.carName}"
+                     validatorMessage="enter car type">
+                     
+                     <f:validateRequired/>
+        
+        </h:inputText>
+        <br></br>
+         <h:outputLabel>Number Plate</h:outputLabel>
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          
+          <h:inputText id="NumberPlate" value="#{RegCarObj.numberPLate}" validatorMessage="Enter number plate">
+              
+         <f:validateRequired/>
+              </h:inputText>
+         <br></br>
+          <h:outputLabel>Model</h:outputLabel>
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          &nbsp;  &nbsp;  &nbsp;  &nbsp;
+          
+          
+          <h:inputText id="Model" value="#{RegCarObj.model}" validatorMessage="Enter model">
+              
+         <f:validateRequired/>
+              </h:inputText>
+          <br></br>
+          
+             <h:outputLabel>LogBookNo</h:outputLabel>
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            
+            
+            <h:inputText id="LogBookNo" value="#{RegCarObj.logBookNo}" validatorMessage="Enter log book number">
+              
+         <f:validateRequired/>
+              </h:inputText>
+             <br></br>
+             
+                   <h:outputLabel>ownerTel</h:outputLabel>
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;
+           
+            <h:inputText id="ownerTel" value="#{RegCarObj.ownerTel}" validatorMessage="Enter Phone number">
+              
+         <f:validateRequired/>
+              </h:inputText>
+                   <br></br>
+                   <h:commandButton value="Submit" action="#{RegCarObj.saveCar()}"></h:commandButton>
+                   
+    </h:form>
+        
+                                </div>
+                        </div>
+                </div>
+        <div class="footer">
+            Copyright 2015
+            
+        </div>
+    </h:body>
+</html>
+

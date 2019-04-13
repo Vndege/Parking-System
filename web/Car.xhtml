@@ -1,0 +1,41 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Reg table</title>
+
+</h:head>
+<h:body>
+	<h2>Car Details</h2>
+	<h:dataTable value="#{carBean.cars}" var="car" border="2">
+		<h:column>
+			<f:facet name="header">regNo</f:facet>
+         #{car.cid}
+      </h:column>
+		<h:column>
+			<f:facet name="header">CarName</f:facet>
+         #{car.cname}
+      </h:column>
+		<h:column>
+			<f:facet name="header">NumberPlate</f:facet>
+           #{car.color}
+       </h:column>
+		<h:column>
+                    <f:facet name="header">model</f:facet>
+           #{car.speed}
+       </h:column>
+		<h:column>
+			<f:facet name="header">LogbookNo.</f:facet>
+           #{car.mfdctry}
+       </h:column>
+            <h:column>
+			<f:facet name="header">OwnersPhone</f:facet>
+           #{car.mfdctry}
+       </h:column>
+	</h:dataTable>
+</h:body>
+</html>
