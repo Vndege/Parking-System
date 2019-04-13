@@ -1,5 +1,6 @@
 import java.sql.*;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 
 
 
@@ -18,6 +19,7 @@ import javax.faces.bean.ManagedBean;
  *git
  */
 @ManagedBean(name="RegCarObj")
+@RequestScoped
 public class RegCar {
 
 
