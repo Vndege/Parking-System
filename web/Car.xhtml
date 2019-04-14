@@ -1,16 +1,32 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Reg table</title>
-
-</h:head>
-<h:body>
-	<h2>Car Details</h2>
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> E parking systems</title>           
+        <link rel="stylesheet" href="styles.css"></link>          
+    </h:head>
+    
+    <h:body>
+        <div class="header">
+            <div class="container">
+		<h1 class="header-heading">E Parking</h1>
+		</div>
+	</div>
+	<div class="nav-bar">
+	<div class="container">
+            <ul class="nav">
+            <li><a href="faces/Home.xhtml">Register Car</a></li>
+            <li><a href="faces/allocateparking.xhtml">Book Parking</a></li>
+            </ul>
+	</div>
+	</div>
+	<div class="content">
+	<div class="container">
+	<div class="main">
+            <h8>Car Details</h8>
+            <br></br><br></br>
 	<h:dataTable value="#{carBean.cars}" var="car" border="2">
 		<h:column>
 			<f:facet name="header">regNo</f:facet>
@@ -37,5 +53,14 @@
            #{car.mfdctry}
        </h:column>
 	</h:dataTable>
-</h:body>
+        </div>
+        </div>  
+    </div>
+       
+<!--        //JAVA COMMENT ADDED-->
+    </h:body>
+     <div class="footer">
+        Copyright 2015
+            
+        </div>
 </html>
