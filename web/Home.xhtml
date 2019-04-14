@@ -5,8 +5,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>E parking systems</title>           
-        <link rel="stylesheet" href="styles.css"></link>
-        <title>Eparking</title>            
+        <link rel="stylesheet" href="styles.css"></link>          
     </h:head>
     
     <h:body>
@@ -18,18 +17,18 @@
 	<div class="nav-bar">
 	<div class="container">
             <ul class="nav">
-            <li><a href="Home.xhtml">Home</a></li>
-            <li><a href="Home">Register Car</a></li>
-            <li><a href="allocateparking">Book Parking</a></li>
+            <li><a href="faces/Home.xhtml">Register Car</a></li>
+            <li><a href="faces/allocateparking.xhtml">Book Parking</a></li>
             </ul>
 	</div>
 	</div>
 	<div class="content">
 	<div class="container">
 	<div class="main">
+           
+            <div class="form-container">
             <h8>Please Register Your Car</h8>
             <br></br><br></br>
-            <div class="form-container">
             <h:form>
             <h:outputLabel>Car Registration Number</h:outputLabel>
             <h:inputText id="regno" value="#{RegCarObj.regNo}" validatorMessage="enter reg no"> <f:validateRequired/>
@@ -68,6 +67,7 @@
               
          <f:validateRequired/>
               </h:inputText>
+         <br></br><br></br>
                 <h:commandButton value="Submit" action="#{RegCarObj.saveCar()}"></h:commandButton>
                    
         </h:form>
