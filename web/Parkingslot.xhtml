@@ -27,33 +27,33 @@
 	<div class="content">
 	<div class="container">
 	<div class="main">
-            <h8>Car Details</h8>
+            <h8>Parking Details</h8>
             <br></br><br></br>
-            <h:dataTable value="#{carBean.getCarList()}" var="c" border="2">
+            <h:dataTable value="#{ParkingBean.getParkingList()}" var="p" border="2">
 		<h:column>
-			<f:facet name="header">Reg No</f:facet> 
-                        #{c.regno}
+			<f:facet name="header">Car Number Plate</f:facet> 
+                        #{p.carnumberplate}
          
       </h:column>
 		<h:column>
-			<f:facet name="header">Car Name</f:facet>
-         #{c.carName}
+			<f:facet name="header">Parking Type</f:facet>
+         #{p.parkingtype}
       </h:column>
 		<h:column>
 			<f:facet name="header">Number Plate</f:facet>
-           #{c.numberPlate}
+           #{p.slotno}
        </h:column>
 		<h:column>
-                    <f:facet name="header">model</f:facet>
-           #{c.model}
+                    <f:facet name="header">Date</f:facet>
+           #{p.date}
        </h:column>
 		<h:column>
-			<f:facet name="header">Log Book No.</f:facet>
-           #{c.logBookNo}
+			<f:facet name="header">Entry Time</f:facet>
+           #{p.entrytime}
        </h:column>
             <h:column>
-			<f:facet name="header">Owners Phone</f:facet>
-           #{c.ownerTel}
+			<f:facet name="header">Exit Time</f:facet>
+           #{p.exittime}
        </h:column>
 	</h:dataTable>
         </div>

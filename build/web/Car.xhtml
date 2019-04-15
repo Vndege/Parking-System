@@ -1,41 +1,69 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Reg table</title>
-
-</h:head>
-<h:body>
-	<h2>Car Details</h2>
-	<h:dataTable value="#{carBean.cars}" var="car" border="2">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title> E parking systems</title>           
+        <link rel="stylesheet" href="styles.css"></link>          
+    </h:head>
+    
+    <h:body>
+        <div class="header">
+            <div class="container">
+		<h1 class="header-heading">E Parking</h1>
+		</div>
+	</div>
+	<div class="nav-bar">
+	<div class="container">
+            <ul class="nav">
+            <li><a href="faces/Home.xhtml">Register Car</a></li>
+            <li><a href="faces/Car.xhtml">Car Details</a></li>
+            <li><a href="faces/allocateparking.xhtml">Book Parking</a></li>
+            <li><a href="faces/Parkingslot.xhtml">Parking Slot Details</a></li>
+            </ul>
+	</div>
+	</div>
+	<div class="content">
+	<div class="container">
+	<div class="main">
+            <h8>Car Details</h8>
+            <br></br><br></br>
+            <h:dataTable value="#{carBean.getCarList()}" var="c" border="2">
 		<h:column>
-			<f:facet name="header">regNo</f:facet>
-         #{car.cid}
+			<f:facet name="header">Reg No</f:facet> 
+                        #{c.regno}
+         
       </h:column>
 		<h:column>
-			<f:facet name="header">CarName</f:facet>
-         #{car.cname}
+			<f:facet name="header">Car Name</f:facet>
+         #{c.carName}
       </h:column>
 		<h:column>
-			<f:facet name="header">NumberPlate</f:facet>
-           #{car.color}
+			<f:facet name="header">Number Plate</f:facet>
+           #{c.numberPlate}
        </h:column>
 		<h:column>
                     <f:facet name="header">model</f:facet>
-           #{car.speed}
+           #{c.model}
        </h:column>
 		<h:column>
-			<f:facet name="header">LogbookNo.</f:facet>
-           #{car.mfdctry}
+			<f:facet name="header">Log Book No.</f:facet>
+           #{c.logBookNo}
        </h:column>
             <h:column>
-			<f:facet name="header">OwnersPhone</f:facet>
-           #{car.mfdctry}
+			<f:facet name="header">Owners Phone</f:facet>
+           #{c.ownerTel}
        </h:column>
 	</h:dataTable>
-</h:body>
+        </div>
+        </div>  
+    </div>
+       
+<!--        //JAVA COMMENT ADDED-->
+    </h:body>
+     <div class="footer">
+        Copyright 2015
+            
+        </div>
 </html>

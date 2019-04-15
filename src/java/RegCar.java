@@ -23,30 +23,26 @@ import javax.faces.bean.RequestScoped;
 public class RegCar {
 
 
-    public int regNo;
+    public int regno;
     public String CarName;
-    public String NumberPLate;
-    public String model;
+    public String NumberPlate;
+    public String Model;
     public String LogBookNo;
     public String OwnerTel;
     
             
     DBConnect myDB= new DBConnect();
     Connection myCon = myDB.myConnect();
-    
-    public RegCar(){}
 
-    public int getRegNo() {
-        return regNo;
+    public int getRegno() {
+        return regno;
     }
 
-    public void setRegNo(int regNo) {
-        this.regNo = regNo;
+    public void setRegno(int regno) {
+        this.regno = regno;
     }
-    
-    
-    
-        public String getCarName() {
+
+    public String getCarName() {
         return CarName;
     }
 
@@ -54,20 +50,20 @@ public class RegCar {
         this.CarName = CarName;
     }
 
-    public String getNumberPLate() {
-        return NumberPLate;
+    public String getNumberPlate() {
+        return NumberPlate;
     }
 
-    public void setNumberPLate(String NumberPLate) {
-        this.NumberPLate = NumberPLate;
+    public void setNumberPlate(String NumberPlate) {
+        this.NumberPlate = NumberPlate;
     }
 
     public String getModel() {
-        return model;
+        return Model;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModel(String Model) {
+        this.Model = Model;
     }
 
     public String getLogBookNo() {
@@ -86,6 +82,8 @@ public class RegCar {
         this.OwnerTel = OwnerTel;
     }
     
+    
+    
     //Java Comment
 
     public String saveCar() throws SQLException{
@@ -97,13 +95,13 @@ public class RegCar {
     s = myCon.createStatement();
 
    String sql = "INSERT INTO registercar "
-+ "(regNo,CarName,NumberPlate,Model,LogBookNo,OwnerTel) "
-+ "VALUES ('" + getRegNo()+ "','"+ getCarName()+ "',+ '"+getNumberPLate()+"','"+getModel()+"','"+getLogBookNo()+"','"+getOwnerTel()+"') ";
++ "(regno,CarName,NumberPlate,Model,LogBookNo,OwnerTel) "
++ "VALUES ('" + getRegno()+ "','"+ getCarName()+ "',+ '"+getNumberPlate()+"','"+getModel()+"','"+getLogBookNo()+"','"+getOwnerTel()+"') ";
 s.execute(sql);
 
 
     }
-    return "allocateparking";
+    return "Car";
     }
 
     }

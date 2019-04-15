@@ -12,13 +12,13 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 
-@ManagedBean(name = "carBean")
+@ManagedBean(name = "ParkingBean")
 @SessionScoped
-public class carBean {
+public class ParkingBean {
 
-public List<RegCar> getCarList()
+public List<parkingslot> getParkingList()
 {
-List<RegCar> list = new ArrayList<RegCar>();
+List<parkingslot> slotlist = new ArrayList<parkingslot>();
 PreparedStatement ps = null;
 Connection con = null;
 ResultSet rs = null;
@@ -28,21 +28,21 @@ try
 con = DriverManager.getConnection(""
 + "jdbc:mysql://localhost/eparking"
     + "?user=root&password=");
-String sql = "select * from registercar";
+String sql = "select * from allocateparking";
 ps= con.prepareStatement(sql); 
 rs= ps.executeQuery(); 
 while (rs.next())
 {
-RegCar usr = new RegCar();
-usr.setRegno(rs.getInt("regno"));
-usr.setCarName(rs.getString("CarName"));
-usr.setNumberPlate(rs.getString("NumberPlate"));
-usr.setModel(rs.getString("Model"));
-usr.setLogBookNo(rs.getString("LogBookNo"));
-usr.setOwnerTel(rs.getString("OwnerTel"));
+parkingslot usr = new parkingslot();
+usr.setCarnumberplate(rs.getString("carnumberplate"));
+usr.setParkingtype(rs.getString("parkingtype"));
+usr.setSlotno(rs.getString("parkingslot"));
+usr.setDate(rs.getString("parkingdate"));
+usr.setEntrytime(rs.getString("entrytime"));
+usr.setExittime(rs.getString("exittime"));
 
 
-list.add(usr);
+slotlist.add(usr);
 } 
 }
 
@@ -62,6 +62,6 @@ catch(Exception e)
 e.printStackTrace();
 }
 }
-return list;
+return slotlist;
 }
 }

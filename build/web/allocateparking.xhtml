@@ -1,20 +1,38 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://java.sun.com/jsp/jstl/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>PARKING</title>
+        <title>E parking systems</title>           
+        <link rel="stylesheet" href="styles.css"></link>
+        <title>Eparking</title>            
     </h:head>
+    
     <h:body>
-        <center>
-            <h1>
-               Parking Allocation
-            </h1>
-        </center>
-        <h:form>
+        <div class="header">
+            <div class="container">
+		<h1 class="header-heading">E Parking</h1>
+		</div>
+	</div>
+	<div class="nav-bar">
+	<div class="container">
+            <ul class="nav">
+            <li><a href="faces/Home.xhtml">Register Car</a></li>
+            <li><a href="faces/Car.xhtml">Car Details</a></li>
+            <li><a href="faces/allocateparking.xhtml">Book Parking</a></li>
+            <li><a href="faces/Parkingslot.xhtml">Parking Slot Details</a></li>
+            </ul>
+	</div>
+	</div>
+	<div class="content">
+	<div class="container">
+	<div class="main">
+           
+            <div class="form-container">
+            <h:form>
+                 <h8>Please Book Your Parking</h8>
+            <br></br><br></br>
              <h:outputLabel>Car Number Plate</h:outputLabel>
              <h:inputText id = "NumberPlate" value="#{parkingslot.carnumberplate}" validatorMessage="Please Enter Car
             Number Plate ">
@@ -23,11 +41,7 @@
             
             <br></br><br></br>
             <h:outputLabel>Parking Type</h:outputLabel>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;
+          
             <h:selectOneRadio value="#{parkingslot.parkingtype}">
                 <f:selectItem itemValue="Disabled"
                               itemLabel="Disabled"/>
@@ -35,36 +49,40 @@
                               itemLabel="Normal"/>
             
             </h:selectOneRadio>
-            
-            <br></br><br></br>
+
              <h:outputLabel>Parking Slot No</h:outputLabel>
              <h:inputText id = "ParkingSlot" value="#{parkingslot.slotno}" validatorMessage="Please Choose Parking Slot">
             <f:validateRequired/>
         </h:inputText>
-            
-            <br></br><br></br>
+
             <h:outputLabel>Parking Date</h:outputLabel>
             <h:inputText id="txtDate" value="#{parkingslot.date}" validatorMessage="Please select Date of Parking">
               <f:validateRequired/>  
             </h:inputText>
-            
-            <br></br><br></br>
-            <h:outputLabel>Parking Time</h:outputLabel>
-            <br></br><br></br>
+
             <h:outputLabel>Entry Time</h:outputLabel>
             <h:inputText id="EntryTime" value="#{parkingslot.entrytime}" validatorMessage="Please enter Entry Time">
              <f:validateRequired/>   
             </h:inputText>
-            
-            <br></br><br></br>
+       
             <h:outputLabel>Exit Time</h:outputLabel>
             <h:inputText id="ExitTime" value="#{parkingslot.exittime}" validatorMessage="Please enter Exit Time">
                 <f:validateRequired/>
             </h:inputText>
             <br></br><br></br>
-            <h:commandButton value="submit" action="#{parkingslot.saveParkingslot()}">Submit</h:commandButton>
+            <h:commandButton value="Submit" action="#{parkingslot.saveParkingslot()}"></h:commandButton>
         </h:form>
        
+    </div>
+        </div>  
+    </div>
+    </div>
+        <div class="footer">
+        Copyright 2015
+            
+        </div>
+<!--        //JAVA COMMENT ADDED-->
     </h:body>
+    
 </html>
 

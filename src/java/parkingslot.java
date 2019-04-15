@@ -93,7 +93,7 @@ String sql = "INSERT INTO allocateparking "
 s.execute(sql);
 
 }
-return "allocateparking";}
+return "Parkingslot";}
 
 
 }
